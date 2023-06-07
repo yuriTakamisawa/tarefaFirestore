@@ -1,0 +1,80 @@
+<div class="container ">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+                <div class="container-fluid bg-primary p-3">
+                    <a class="navbar-brand text-white" href="./">SISTEMA WEB</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarNav">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item ">
+                            <a class="nav-link active text-white" aria-current="page" href="./">Cadastrar</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-white text-active" href="./consulta">Consultar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <div class="bg-white px-4 py-3">
+                <h5 class="fw-bold py-1"> Consultar - Agendamento de Potenciais Clientes </h5>
+                <h6 class="fw-normal py-1 mb-4"> Consulta de agendamentos de serviços </h6>
+            </div>
+
+            <div class="container text-center bg-light">
+                <div class="row">
+                    <div class="col bg-primary text-white">
+                        Nome
+                    </div>
+                    <div class="col bg-primary text-white">
+                        Telefone
+                    </div>
+                    <div class="col bg-primary text-white">
+                        Origem
+                    </div>
+                    <div class="col bg-primary text-white">
+                        Data
+                    </div>
+                    <div class="col bg-primary text-white">
+                        Observação
+                    </div>
+                    <div class="col bg-primary text-white">
+                        Ações
+                    </div>
+                </div>
+
+                {{#each vetor}}
+                    <div class="row">
+                        <div class="col border align-middle p-3">
+                            {{nome}}
+                        </div>
+                        <div class="col border align-middle p-3">
+                            {{telefone}}
+                        </div>
+                        <div class="col border align-middle p-3">
+                            {{origem}}
+                        </div>
+                        <div class="col border align-middle p-3">
+                            {{data_contato}}
+                        </div>
+                        <div class="col border align-middle p-3">
+                            {{observacao}}
+                        </div>
+                        <div class="col border p-3">
+                            <a href="/excluir/{{nome}}" class="btn btn-primary btn-sm p-2">Excluir</a>
+                            <a href="/editar/{{nome}}" class="btn btn-primary btn-sm p-2">Editar</a>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
